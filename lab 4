@@ -1,0 +1,23 @@
+with open("massiv.txt", "w") as f:
+    massiv = [
+        [3, 5, 9],
+        [12, 7, 2],
+        [11, 4, 13]
+    ]
+    for sətir in massiv:
+        f.write(" ".join(map(str, sətir)) + "\n")
+
+secilmis_ededler = []
+with open("massiv.txt", "r") as f:
+    for sətr in f:
+        ədədlər = list(map(int, sətr.split()))
+        for x in ədədlər:
+            if 4 < x < 12:
+                secilmis_ededler.append(x)
+
+with open("secilmis_ededler.txt", "w") as f:
+    for x in secilmis_ededler:
+        f.write(str(x) + "\n")
+
+cem = sum(secilmis_ededler)
+print("Şərtə uyğun ədədlərin cəmi:", cem)
