@@ -1,0 +1,21 @@
+def cüt_sətir_cəmləri(A):
+    n = len(A)
+    m = len(A[0]) if n > 0 else 0
+    cəmlər = []
+
+    for i in range(0, n, 2):
+        sətir_cəmi = sum(A[i])
+        cəmlər.append((i, sətir_cəmi))
+
+    return cəmlər
+
+A = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
+]
+
+nəticə = cüt_sətir_cəmləri(A)
+for sətir, cəm in nəticə:
+    print(f"{sətir}-ci sətrin cəmi: {cəm}")
